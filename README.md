@@ -1,8 +1,10 @@
-# AstroNvim Template
+# AstroNvim configuration
+
+Based on [this template](https://github.com/AstroNvim/template).
 
 **NOTE:** This is for AstroNvim v4+
 
-A template for getting started with [AstroNvim](https://github.com/AstroNvim/AstroNvim)
+For my old v3 config, [see here](https://git.sr.ht/~smlavine/astronvim-user).
 
 ## 🛠️ Installation
 
