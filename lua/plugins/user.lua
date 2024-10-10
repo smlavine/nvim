@@ -1,13 +1,12 @@
-if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
-
 -- You can also add or configure plugins by creating files in this `plugins/` folder
 -- Here are some examples:
 
 ---@type LazySpec
 return {
 
-  -- == Examples of Adding Plugins ==
-
+  "Mofiqul/dracula.nvim",
+  "tpope/vim-fugitive",
+  "mfussenegger/nvim-jdtls",
   "andweeb/presence.nvim",
   {
     "ray-x/lsp_signature.nvim",
@@ -23,17 +22,7 @@ return {
     opts = function(_, opts)
       -- customize the dashboard header
       opts.section.header.val = {
-        " █████  ███████ ████████ ██████   ██████",
-        "██   ██ ██         ██    ██   ██ ██    ██",
-        "███████ ███████    ██    ██████  ██    ██",
-        "██   ██      ██    ██    ██   ██ ██    ██",
-        "██   ██ ███████    ██    ██   ██  ██████",
-        " ",
-        "    ███    ██ ██    ██ ██ ███    ███",
-        "    ████   ██ ██    ██ ██ ████  ████",
-        "    ██ ██  ██ ██    ██ ██ ██ ████ ██",
-        "    ██  ██ ██  ██  ██  ██ ██  ██  ██",
-        "    ██   ████   ████   ██ ██      ██",
+        "・゜゜・。。・゜゜\\_o< QUACK!",
       }
       return opts
     end,
@@ -41,6 +30,36 @@ return {
 
   -- You can disable default plugins as follows:
   { "max397574/better-escape.nvim", enabled = false },
+
+  {
+    "hrsh7th/nvim-cmp",
+    opts = function(_, opts)
+      local cmp = require "cmp"
+      -- Customize sources to de-prioritize luasnip
+      opts.sources = cmp.config.sources {
+        {
+          name = "nvim_lsp",
+          entry_filter = function(entry, ctx)
+            return require("cmp").lsp.CompletionItemKind.Snippet ~= entry:get_kind()
+          end,
+          priority = 1000,
+        },
+        { name = "buffer",  priority = 500, keyword_length = 3 },
+        { name = "path",    priority = 250 },
+        { name = "luasnip", priority = 1 },
+      }
+
+      -- Disable completion documentation window -- my laptop screen is too
+      -- small for it. Documentation can still be viewed in normal mode though.
+      opts.window.documentation = cmp.config.disable
+
+      return opts
+    end,
+    config = function(_, opts)
+      local cmp = require "cmp"
+      cmp.setup(opts)
+    end,
+  },
 
   -- You can also easily customize additional setup of plugins that is outside of the plugin's setup call
   {
