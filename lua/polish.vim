@@ -35,5 +35,6 @@ vnoremap <F4> :call ModalOnSelection()<CR>
 nnoremap <F4> :call ModalOnSelection()<CR>
 
 " TODO actually fix
-" workaround for big error messages when opening git's COMMIT_EDITMSG.
-autocmd BufRead,BufNewFile COMMIT_EDITMSG TSDisable highlight
+" workaround for big error messages when opening git's COMMIT_EDITMSG,
+" header files, etc.
+autocmd BufRead,BufNewFile * TSDisable highlight
