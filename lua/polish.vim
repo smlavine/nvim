@@ -5,6 +5,11 @@
 highlight ColorColumn ctermbg=black
 let &colorcolumn=join(range(80,80),",")
 
+" TODO actually fix
+" workaround for big error messages when opening git's COMMIT_EDITMSG,
+" header files, etc.
+autocmd BufRead,BufNewFile * TSDisable highlight
+
 " When writing Markdown, I prefer to use a 72 column max length. This allows
 " me to toggle it quickly.
 fun! ToggleColumnWidth()
@@ -33,8 +38,3 @@ fun! ModalOnSelection()
 endfun
 vnoremap <F4> :call ModalOnSelection()<CR>
 nnoremap <F4> :call ModalOnSelection()<CR>
-
-" TODO actually fix
-" workaround for big error messages when opening git's COMMIT_EDITMSG,
-" header files, etc.
-autocmd BufRead,BufNewFile * TSDisable highlight
