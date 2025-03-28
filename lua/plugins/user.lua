@@ -39,13 +39,11 @@ return {
       opts.sources = cmp.config.sources {
         {
           name = "nvim_lsp",
-          entry_filter = function(entry, ctx)
-            return require("cmp").lsp.CompletionItemKind.Snippet ~= entry:get_kind()
-          end,
+          entry_filter = function(entry, ctx) return require("cmp").lsp.CompletionItemKind.Snippet ~= entry:get_kind() end,
           priority = 1000,
         },
-        { name = "buffer",  priority = 500, keyword_length = 3 },
-        { name = "path",    priority = 250 },
+        { name = "buffer", priority = 500, keyword_length = 3 },
+        { name = "path", priority = 250 },
         { name = "luasnip", priority = 1 },
       }
 
