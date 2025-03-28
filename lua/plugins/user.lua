@@ -99,4 +99,9 @@ return {
       )
     end,
   },
+
+  {
+    "https://git.sr.ht/~smlavine/vim-haredoc",
+    branch = "smlavine",
+  },
 }
