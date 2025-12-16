@@ -40,17 +40,13 @@ return {
       opts.sources = cmp.config.sources {
         {
           name = "nvim_lsp",
-          entry_filter = function(entry, ctx) return require("cmp").lsp.CompletionItemKind.Snippet ~= entry:get_kind() end,
+          entry_filter = function(entry, _) return require("cmp").lsp.CompletionItemKind.Snippet ~= entry:get_kind() end,
           priority = 1000,
         },
         { name = "buffer", priority = 500, keyword_length = 3 },
         { name = "path", priority = 250 },
         { name = "luasnip", priority = 1 },
       }
-
-      -- Disable completion documentation window -- my laptop screen is too
-      -- small for it. Documentation can still be viewed in normal mode though.
-      opts.window.documentation = cmp.config.disable
 
       return opts
     end,
