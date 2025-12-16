@@ -2,7 +2,7 @@
 
 Based on [this template](https://github.com/AstroNvim/template).
 
-**NOTE:** This is for AstroNvim v4+
+**NOTE:** This is for AstroNvim v5+
 
 For my old v3 config, [see here](https://git.sr.ht/~smlavine/astronvim-user).
 
