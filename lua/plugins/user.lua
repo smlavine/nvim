@@ -8,6 +8,7 @@ return {
   "Mofiqul/dracula.nvim",
   "tpope/vim-fugitive",
   "mfussenegger/nvim-jdtls",
+  "pteroctopus/faster.nvim",
 
   {
     "ray-x/lsp_signature.nvim",
