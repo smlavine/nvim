@@ -3,7 +3,7 @@
 
 " I try to keep my max columns to 80 lines. This lets me know when I go over.
 highlight ColorColumn ctermbg=black
-let &colorcolumn=join(range(80,80),",")
+let &colorcolumn=join(range(81,81),",")
 
 " TODO actually fix
 " workaround for big error messages when opening git's COMMIT_EDITMSG,
@@ -13,11 +13,11 @@ autocmd BufRead,BufNewFile * TSDisable highlight
 " When writing Markdown, I prefer to use a 72 column max length. This allows
 " me to toggle it quickly.
 fun! ToggleColumnWidth()
-	if (&colorcolumn == 80)
-		let &colorcolumn=join(range(73, 80),",")
+	if (&colorcolumn == 81)
+		let &colorcolumn=join(range(73, 81),",")
 		set textwidth=72
 	else
-		let &colorcolumn=join(range(80,80),",")
+		let &colorcolumn=join(range(81,81),",")
 		set textwidth=0
 	endif
 endfun
