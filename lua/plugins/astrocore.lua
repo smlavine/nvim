@@ -52,9 +52,9 @@ return {
         splitbelow = true,
         splitright = true,
         autoindent = true,
-        shiftwidth = 8,
-        softtabstop = 8,
-        tabstop = 8,
+        shiftwidth = 4,
+        softtabstop = 4,
+        tabstop = 4,
         foldcolumn = "0", -- Disable foldcolumn indicator to save horizontal space
       },
       g = { -- vim.g.<key>
